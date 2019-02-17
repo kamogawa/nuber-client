@@ -1,7 +1,7 @@
 import React from "react";
+import Helmet from "react-helmet";
 import { Link, RouteComponentProps } from "react-router-dom";
 import bgImage from "../../images/bg.png";
-import Helmet from "react-helmet";
 import styled from "../../typed-components";
 
 const Container = styled.div`
@@ -27,7 +27,7 @@ const Logo = styled.div`
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 -14px 28px rgba(0, 0, 0, 0.22);
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 25px;
+  font-size: 10px;
 `;
 
 const Title = styled.h1``;
