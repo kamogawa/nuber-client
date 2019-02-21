@@ -11,6 +11,7 @@ const Container = styled.div`
 const Title = styled.h2`
   font-size: 25px;
   margin-bottom: 40px;
+  cursor: pointer;
 `;
 
 const Link = styled.span`

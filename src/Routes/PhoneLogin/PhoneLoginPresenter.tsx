@@ -86,7 +86,12 @@ const PhoneLoginPresenter: React.SFC<IProps> = ({
       ))}
     </CountrySelect>
     <Form onSubmit={onSubmit}>
-      <Input placeholder={"053 690 2129"} value={phoneNumber} name={"phoneNumber"} onChange={onInputChange}/>
+      <Input
+        placeholder={"053 690 2129"}
+        value={phoneNumber}
+        name={"phoneNumber"}
+        onChange={onInputChange}
+      />
       <Button>
         <svg
           xmlns="http://www.w3.org/2000/svg"
