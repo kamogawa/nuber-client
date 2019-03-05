@@ -16,7 +16,10 @@ interface IMutationInterface {
 
 class PhoneSignInMutation extends Mutation<any, IMutationInterface> {}
 
-class PhoneLoginContainer extends React.Component<RouteComponentProps<any>, IState> {
+class PhoneLoginContainer extends React.Component<
+  RouteComponentProps<any>,
+  IState
+> {
   public state = {
     countryCode: "+82",
     phoneNumber: ""
@@ -25,7 +28,6 @@ class PhoneLoginContainer extends React.Component<RouteComponentProps<any>, ISta
   public render() {
     const { countryCode, phoneNumber } = this.state;
     return (
-
       <PhoneSignInMutation
         mutation={PHONE_SIGN_IN}
         variables={{
@@ -58,7 +60,9 @@ class PhoneLoginContainer extends React.Component<RouteComponentProps<any>, ISta
     );
   }
 
-  public onInputChange: React.ChangeEventHandler<HTMLInputElement | HTMLSelectElement> = event => {
+  public onInputChange: React.ChangeEventHandler<
+    HTMLInputElement | HTMLSelectElement
+  > = event => {
     const {
       target: { name, value }
     } = event;
@@ -66,19 +70,6 @@ class PhoneLoginContainer extends React.Component<RouteComponentProps<any>, ISta
       [name]: value
     } as any);
   };
-
-  public onSubmit: React.FormEventHandler<HTMLFormElement> = event => {
-    event.preventDefault();
-    const { countryCode, phoneNumber } = this.state;
-    const isValid = /^\+[1-9]{1}[0-9]{7,11}$/.test(
-      `${countryCode}${phoneNumber}`
-    );
-    if (isValid) {
-      return;
-    } else {
-      toast.error("Please write a valid phone number");
-    }
-  };  
 }
 
 export default PhoneLoginContainer;
