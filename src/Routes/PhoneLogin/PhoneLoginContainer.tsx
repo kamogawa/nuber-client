@@ -81,11 +81,6 @@ class PhoneLoginContainer extends React.Component<
       [name]: value
     } as any);
   };
-
-  public afterSubmit: MutationUpdaterFn = (cache, data) => {
-    // tslint:disable-next-line
-    console.log(data);
-  };
 }
 
 export default PhoneLoginContainer;
